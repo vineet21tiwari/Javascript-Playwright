@@ -24,7 +24,7 @@ test ('TC02 - Verify Dashboard URL after successful login', async ({page})=>{
 test ('TC03 - Verify login failure message', async ({page})=>{
     await page.goto(loginUrl);
 
-    await page.getByPlaceholder('Username').fill('InvalidAdmin');
+    await page.getByPlaceholder('Username').fill('Admin1');
     await page.getByPlaceholder('Password').fill('admin123');
 
     await page.getByRole('button', {name : 'Login'}).click();
