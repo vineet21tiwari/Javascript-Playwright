@@ -37,3 +37,36 @@ test('T03 verify Dashboard URL after UNsucessful login with wrong password', asy
     await page.waitForTimeout(5000);
     await expect(page.getByRole('alert')).toHaveText('Invalid credentials');
 });
+
+test('T03 verify Dashboard URL after UNsucessful login with wrong password', async ({page})=>{
+
+    await page.goto(logURL);
+    await page.getByPlaceholder('Username').fill('Admin');
+    await page.getByPlaceholder('Password').fill('admin123123');
+
+    //Clink on login button
+    await page.locator('button[type="submit"]').click();
+    await page.waitForTimeout(5000);
+    await expect(page.getByRole('alert')).toHaveText('Invalid credentials');
+});
+
+test('T03 verify Dashboard URL after UNsucessful login with wrong password', async ({page})=>{
+
+    await page.goto(logURL);
+    await page.locator('input[name="Username"]').fill('Admin');
+    await page.getByRole('textbox',{name : 'Password'}).fill('admin123123');
+
+    //Clink on login button
+    await page.locator('button[type="submit"]').click();
+    await page.waitForTimeout(5000);
+    await expect(page.getByRole('alert')).toHaveText('Invalid credentials');
+});
+
+test('TC10 -  Understanmd title assertion failure', async ({page}) => {
+    await page.goto(logURL);
+    await expect(page).toHaveTitle(/Selenium/)
+    await expect(page).toHaveTitle(/OrangeHRM/)
+});
+
+
+
