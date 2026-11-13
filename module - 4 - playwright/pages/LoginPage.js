@@ -8,7 +8,7 @@ export class LoginPage {
     }
 
     async open(){
-        await this.page.goto('web/index.php/auth/login');
+        await this.page.goto('/web/index.php/auth/login');
     }
 
     async login(username,password){
