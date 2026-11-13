@@ -11,7 +11,7 @@ export class UserManagementPage {
 
         this.usernameInput = page.getByRole('textbox').first();
 
-        this.employeeNameInput = page.getByPlaceholder('Tyope for hints...');
+        this.employeeNameInput = page.getByPlaceholder('Type for hints...');
 
         this.userRoleDropdown = page.locator('.oxd-select-text').first();
         this.statusDropdown = page.locator('.oxd.select-text').nth(1)
